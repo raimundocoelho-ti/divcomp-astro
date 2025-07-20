@@ -1,48 +1,91 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				<span class="icon-[mdi-light--home]"></span>
+<BaseLayout
+	title="DivComp Informática | Assistência Técnica, Redes, Servidores e Mais"
+	description="Manutenção de computadores, redes, servidores Linux e Windows em Divinésia. Atendimento rápido, claro e sem enrolação. Conheça a DivComp!"
+>
+	{/* HERO SECTION */}
+	<section class="w-full bg-gradient-to-r from-blue-50 via-white to-green-50 py-12 mb-12">
+		<div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+			<div class="flex-1 flex flex-col items-center md:items-start">
+				<img src="/images/logo-div-comp-style.png" alt="Logo DivComp" class="h-24 md:h-32 mb-6 drop-shadow-md" />
+				<h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 text-center md:text-left leading-tight">
+					Sua assistência técnica <span class="text-blue-700">de confiança</span><br class="hidden sm:block" />
+					em Divinésia e região
+				</h1>
+				<p class="text-lg text-gray-700 mb-6 text-center md:text-left">
+					Computadores, notebooks, redes, servidores Linux e Windows, backup, prevenção de falhas e muito mais. Atendimento humano, rápido e sem enrolação!
+				</p>
+				<a
+					href="https://wa.me/SEUNUMERO"
+					class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-7 py-3 rounded-lg shadow transition text-lg"
+					target="_blank" rel="noopener"
+				>
+					<iconify-icon icon="ic:baseline-whatsapp" width="26" />
+					Chamar no WhatsApp
+				</a>
+			</div>
+			<div class="flex-1 hidden md:flex justify-center">
+				<img src="/images/logo-div-comp-style-bg-br.png" alt="DivComp destaque" class="h-40 md:h-56 drop-shadow-xl" />
+			</div>
+		</div>
+	</section>
+
+	{/* SERVIÇOS DESTAQUE */}
+	<section class="max-w-4xl mx-auto px-4 mb-16">
+		<h2 class="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-10">Nossos principais serviços</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+			<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-3 items-start border-l-4 border-blue-600">
+				<div class="text-blue-600"><iconify-icon icon="mdi:monitor-screenshot" width="32" /></div>
+				<h3 class="font-bold text-lg">Manutenção de Computadores</h3>
+				<p class="text-gray-700">Seu PC travou ou está lento? Fazemos formatação, limpeza, troca de peças, remoção de vírus e mais.</p>
+			</div>
+			<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-3 items-start border-l-4 border-green-600">
+				<div class="text-green-600"><iconify-icon icon="mdi:network" width="32" /></div>
+				<h3 class="font-bold text-lg">Redes e Internet</h3>
+				<p class="text-gray-700">Montagem, configuração, diagnóstico e solução para sua internet em casa, empresa ou sítio.</p>
+			</div>
+			<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-3 items-start border-l-4 border-yellow-500">
+				<div class="text-yellow-500"><iconify-icon icon="mdi:server" width="32" /></div>
+				<h3 class="font-bold text-lg">Servidores Linux e Windows</h3>
+				<p class="text-gray-700">Implantação, manutenção, backup e otimização de servidores para garantir segurança e desempenho.</p>
+			</div>
+			<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-3 items-start border-l-4 border-indigo-500">
+				<div class="text-indigo-500"><iconify-icon icon="mdi:cloud-upload-outline" width="32" /></div>
+				<h3 class="font-bold text-lg">Backup & Proteção de Dados</h3>
+				<p class="text-gray-700">Evite perdas! Soluções de backup local e na nuvem. Recuperação de dados e arquivos.</p>
+			</div>
+			<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-3 items-start border-l-4 border-pink-500">
+				<div class="text-pink-500"><iconify-icon icon="mdi:account-cog" width="32" /></div>
+				<h3 class="font-bold text-lg">Consultoria & Suporte</h3>
+				<p class="text-gray-700">Dúvidas, projetos ou problemas? Consultoria em TI para empresas e residências, presencial ou remoto.</p>
+			</div>
+			<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-3 items-start border-l-4 border-teal-500">
+				<div class="text-teal-500"><iconify-icon icon="mdi:shield-check" width="32" /></div>
+				<h3 class="font-bold text-lg">Prevenção de Falhas</h3>
+				<p class="text-gray-700">Manutenção preventiva e análise para evitar que seu equipamento pare na hora errada.</p>
+			</div>
+		</div>
+	</section>
+
+	{/* CTA FINAL */}
+	<section class="bg-blue-700 text-white py-12">
+		<div class="max-w-2xl mx-auto text-center px-4">
+			<h2 class="text-2xl md:text-3xl font-bold mb-3">Problemas com computador, rede ou servidor?</h2>
+			<p class="mb-6 text-lg">
+				Converse agora mesmo no WhatsApp. Atendimento rápido, sem enrolação e com explicação simples.
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+			<a
+				href="https://wa.me/SEUNUMERO"
+				class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-lg shadow text-lg transition"
+				target="_blank" rel="noopener"
+			>
+				<iconify-icon icon="ic:baseline-whatsapp" width="26" />
+				Fale agora!
+			</a>
+		</div>
+	</section>
+</BaseLayout>
