@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const {
     title = "DivComp Informática | Assistência Técnica e Soluções em TI",
     description = "Manutenção de computadores, redes, servidores Linux e Windows em Divinésia. Atendimento rápido, profissional e humano.",
@@ -30,58 +32,11 @@ const {
     -->
 </head>
 <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
-{/* --- HEADER --- */}
-<header class="w-full bg-white shadow sticky top-0 z-20">
-    <div class="container mx-auto flex items-center justify-between px-4 py-3">
-        <a href="/" class="flex items-center gap-3">
-            <img src="/images/logo-div-comp.png" alt="DivComp Informática" class="h-12 w-auto" />
-            <span class="font-bold text-xl tracking-tight text-gray-800 hidden sm:inline">DivComp Informática</span>
-        </a>
-        <nav class="flex gap-4 text-base font-semibold">
-            <a href="/" class="text-gray-700 hover:text-blue-700 transition">Início</a>
-            <a href="/servicos" class="text-gray-700 hover:text-blue-700 transition">Serviços</a>
-            <a href="/sobre" class="text-gray-700 hover:text-blue-700 transition">Sobre</a>
-            <a href="/faq" class="text-gray-700 hover:text-blue-700 transition">Dúvidas</a>
-            <a href="/contato" class="text-gray-700 hover:text-blue-700 transition">Contato</a>
-        </nav>
-        <div class="hidden md:block">
-            <a href="https://wa.me/SEUNUMERO" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-4 py-2 rounded-lg shadow transition">
-                <iconify-icon icon="ic:baseline-whatsapp" width="22" class="inline" />
-                WhatsApp
-            </a>
-        </div>
-    </div>
-</header>
-
-{/* --- CONTEÚDO CENTRAL --- */}
+<Header/>
 <main class="flex-1 w-full max-w-4xl mx-auto px-4 py-8">
     <slot />
 </main>
 
-{/* --- FOOTER --- */}
-<footer class="bg-gray-900 text-gray-200 py-8 mt-12">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
-        <div class="flex items-center gap-2">
-            <img src="/images/logo-div-comp-bg-br.png" alt="Logo DivComp" class="h-8 w-auto" />
-            <span class="text-lg font-bold">DivComp Informática</span>
-        </div>
-        <div class="text-center text-sm md:text-left">
-          <span>&copy; {new Date().getFullYear()} DivComp Informática - Divinésia/MG<br />
-            Soluções em informática, redes e servidores.<br />
-            Todos os direitos reservados.
-          </span>
-        </div>
-        <div class="flex gap-4 items-center">
-            <a href="https://wa.me/SEUNUMERO" target="_blank" rel="noopener" class="flex items-center gap-1 text-green-400 hover:text-green-500 transition">
-                <iconify-icon icon="ic:baseline-whatsapp" width="20" />
-                WhatsApp
-            </a>
-            <a href="mailto:contato@divcomp.com.br" class="flex items-center gap-1 hover:text-blue-300 transition">
-                <iconify-icon icon="ic:baseline-email" width="20" />
-                Email
-            </a>
-        </div>
-    </div>
-</footer>
+<Footer/>
 </body>
 </html>
