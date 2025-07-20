@@ -1,29 +1,44 @@
 ---
+const whatsapp = "5532999998888";
 const year = new Date().getFullYear();
-const whatsapp = "5532999998888"; // Seu número internacional (sem +)
 ---
 
-<footer class="bg-gray-900 text-gray-200 py-8 mt-12">
-	<div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
-		<div class="flex items-center gap-2">
-			<img src="/images/logo-div-comp-bg-br.png" alt="Logo DivComp" class="h-12 w-auto" />
-		</div>
-		<div class="text-center text-sm md:text-left">
-      <span>
-        &copy; {year} DivComp Informática - Divinésia/MG<br />
-        Soluções em informática, redes e servidores.<br />
-        Todos os direitos reservados.
+<footer class="bg-gray-900 text-gray-300 py-10 mt-16">
+	<div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-6">
+		<div class="flex flex-col items-center md:items-start gap-3">
+			<img src="/images/logo-tipo-div-comp-footer.png" alt="Logo DivComp" class="h-14 w-auto mb-1" loading="lazy" />
+			<span class="text-gray-400 text-sm md:text-base text-center md:text-left max-w-xs">
+        Manutenção, redes e servidores.<br />
+        Atendimento humanizado e confiança para empresas e residências em Divinésia/MG e região.
       </span>
 		</div>
-		<div class="flex gap-4 items-center">
-			<a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener" class="flex items-center gap-1 text-green-400 hover:text-green-500 transition">
-				<iconify-icon icon="ic:baseline-whatsapp" width="20" />
-				WhatsApp
-			</a>
-			<a href="mailto:contato@divcomp.com.br" class="flex items-center gap-1 hover:text-yellow-300 transition">
-				<iconify-icon icon="ic:baseline-email" width="20" />
-				Email
-			</a>
+		<nav class="flex flex-col md:flex-row gap-1 md:gap-5 items-center mt-4 md:mt-0">
+			<a href="/" class="hover:text-green-400 transition">Início</a>
+			<a href="/servicos" class="hover:text-green-400 transition">Serviços</a>
+			<a href="/sobre" class="hover:text-green-400 transition">Sobre</a>
+			<a href="/faq" class="hover:text-green-400 transition">Dúvidas</a>
+			<a href="/contato" class="hover:text-green-400 transition">Contato</a>
+		</nav>
+		<div class="flex flex-col items-center md:items-end gap-2">
+			<div class="flex gap-4 items-center">
+				<a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener" class="flex items-center gap-2 text-green-400 hover:text-green-500 transition">
+					<span class="icon-[ic--baseline-whatsapp] w-6 h-6"></span>
+					WhatsApp
+				</a>
+				<a href="mailto:contato@divcomp.com.br" class="flex items-center gap-2 text-gray-300 hover:text-yellow-300 transition">
+					<span class="icon-[ic--baseline-email] w-6 h-6"></span>
+					Email
+				</a>
+			</div>
+			<span class="text-gray-400 text-xs">Divinésia/MG • Segunda a sábado, das 8h às 18h</span>
 		</div>
+	</div>
+	<div class="max-w-7xl mx-auto mt-8 pt-4 border-t border-green-800/10 text-center text-xs text-gray-500 flex flex-col md:flex-row items-center justify-between gap-2 px-6">
+    <span>
+      &copy; {year} DivComp Informática. Todos os direitos reservados.
+    </span>
+		<span>
+      Desenvolvido por <span class="font-semibold text-green-400">Raimundo C Ferreira</span> — <span class="text-green-500 font-semibold">Sábio System Tecnologia</span>
+    </span>
 	</div>
 </footer>

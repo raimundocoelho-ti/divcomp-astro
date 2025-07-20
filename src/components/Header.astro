@@ -1,24 +1,62 @@
 ---
-const whatsapp = "5532999998888"; // Seu número internacional (sem +)
+import HeaderLink from './HeaderLink.astro';
+const whatsapp = "5532999998888";
+let menuOpen = false;
 ---
 
-<header class="w-full bg-white shadow sticky top-0 z-20">
+<header class="bg-white shadow sticky top-0 z-30 w-full">
 	<div class="container mx-auto flex items-center justify-between px-4 py-3">
-		<a href="/" class="flex items-center gap-3">
-			<img src="/images/logo-div-comp.png" alt="DivComp Informática" class="h-12 w-auto" />
+		{/* Logo - sem texto */}
+		<a href="/" class="flex items-center">
+			<img src="/images/logo-div-comp.png" alt="DivComp Informática" class="h-10 w-auto" />
 		</a>
-		<nav class="flex gap-4 text-base font-semibold">
-			<a href="/" class="text-gray-700 hover:text-yellow-600 transition">Início</a>
-			<a href="/servicos" class="text-gray-700 hover:text-yellow-600 transition">Serviços</a>
-			<a href="/sobre" class="text-gray-700 hover:text-yellow-600 transition">Sobre</a>
-			<a href="/faq" class="text-gray-700 hover:text-yellow-600 transition">Dúvidas</a>
-			<a href="/contato" class="text-gray-700 hover:text-yellow-600 transition">Contato</a>
+
+		{/* Desktop menu */}
+		<nav class="hidden md:flex gap-2 text-base font-semibold">
+			<HeaderLink href="/">Início</HeaderLink>
+			<HeaderLink href="/servicos">Serviços</HeaderLink>
+			<HeaderLink href="/sobre">Sobre</HeaderLink>
+			<HeaderLink href="/faq">Dúvidas</HeaderLink>
+			<HeaderLink href="/contato">Contato</HeaderLink>
 		</nav>
-		<div class="hidden md:block">
-			<a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-4 py-2 rounded-lg shadow transition">
-				<iconify-icon icon="ic:baseline-whatsapp" width="22" class="inline" />
+
+		{/* WhatsApp Button (desktop only) */}
+		<a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener"
+		   class="ml-4 hidden md:inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-4 py-2 rounded-lg shadow transition">
+			<span class="icon-[ic--baseline-whatsapp] w-6 h-6"></span>
+			WhatsApp
+		</a>
+
+		{/* Mobile Hamburger Button */}
+		<button
+			class="md:hidden ml-2 flex items-center p-2 rounded text-gray-700 hover:bg-gray-100 focus:outline-none"
+			onclick={() => menuOpen = !menuOpen}
+			aria-label="Abrir menu"
+		>
+			<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+				 viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round"
+					  d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 8h16M4 16h16"} />
+			</svg>
+		</button>
+	</div>
+
+	{/* Mobile Menu */}
+	<div class={[
+		"md:hidden transition-all bg-white border-t border-gray-100 shadow",
+		menuOpen ? "max-h-96 py-4" : "max-h-0 overflow-hidden py-0"
+	].join(' ')}>
+		<nav class="flex flex-col gap-2 px-6">
+			<HeaderLink href="/">Início</HeaderLink>
+			<HeaderLink href="/servicos">Serviços</HeaderLink>
+			<HeaderLink href="/sobre">Sobre</HeaderLink>
+			<HeaderLink href="/faq">Dúvidas</HeaderLink>
+			<HeaderLink href="/contato">Contato</HeaderLink>
+			<a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener"
+			   class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-4 py-2 rounded-lg shadow mt-3 transition">
+				<span class="icon-[ic--baseline-whatsapp] w-6 h-6"></span>
 				WhatsApp
 			</a>
-		</div>
+		</nav>
 	</div>
 </header>
