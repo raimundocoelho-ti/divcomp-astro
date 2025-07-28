@@ -1,16 +1,31 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 import Hero from '../components/Hero.astro';
 import Servicos from '../components/Servicos.astro';
 import Sobre from '../components/Sobre.astro';
 import Duvidas from '../components/Duvidas.astro';
 import Contato from '../components/Contato.astro';
+
+const title = "DivComp Soluções | TI, Manutenção, Aulas e Programação";
+const description = "A sua solução completa em TI, manutenção, redes, cursos de informática, programação e consultoria. Atendimento humano e profissional para Divinésia/MG e região.";
 ---
 
-<BaseLayout title="DivComp Informática | Soluções em TI para você" description="Landing page da DivComp. Seu problema de informática resolvido com rapidez e confiança.">
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+	<BaseHead title={title} description={description} />
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+<Header />
+<main>
 	<Hero />
 	<Servicos />
 	<Sobre />
 	<Duvidas />
 	<Contato />
-</BaseLayout>
+</main>
+<Footer />
+</body>
+</html>
