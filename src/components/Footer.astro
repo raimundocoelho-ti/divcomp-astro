@@ -1,44 +1,60 @@
 ---
-const whatsapp = "553298408646";
+// --- DADOS ---
+// CORRIGIDO: Número do WhatsApp consistente com o Header.
+const whatsapp = "5532999998888";
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-900 text-gray-300 py-10 mt-16">
-	<div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-6">
-		<div class="flex flex-col items-center md:items-start gap-3">
-			<img src="/images/logo-tipo-div-comp-footer.png" alt="Logo DivComp" class="h-14 w-auto mb-1" loading="lazy" />
-			<span class="text-gray-400 text-sm md:text-base text-center md:text-left max-w-xs">
-        Manutenção, redes e servidores.<br />
-        Atendimento humanizado e confiança para empresas e residências em Divinésia/MG e região.
-      </span>
-		</div>
-		<nav class="flex flex-col md:flex-row gap-1 md:gap-5 items-center mt-4 md:mt-0">
-			<a href="/" class="hover:text-green-400 transition">Início</a>
-			<a href="/servicos" class="hover:text-green-400 transition">Serviços</a>
-			<a href="/sobre" class="hover:text-green-400 transition">Sobre</a>
-			<a href="/faq" class="hover:text-green-400 transition">Dúvidas</a>
-			<a href="/contato" class="hover:text-green-400 transition">Contato</a>
-		</nav>
-		<div class="flex flex-col items-center md:items-end gap-2">
-			<div class="flex gap-4 items-center">
-				<a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener" class="flex items-center gap-2 text-green-400 hover:text-green-500 transition">
-					<span class="icon-[ic--baseline-whatsapp] w-6 h-6"></span>
-					WhatsApp
-				</a>
-				<a href="mailto:contato@divcomp.com.br" class="flex items-center gap-2 text-gray-300 hover:text-yellow-300 transition">
-					<span class="icon-[ic--baseline-email] w-6 h-6"></span>
-					Email
-				</a>
+<footer class="bg-gray-900 text-gray-400">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+
+			<div class="lg:col-span-4">
+				<img src="/images/logo-tipo-div-comp-footer.png" alt="Logo DivComp Informática" class="h-14 w-auto" loading="lazy" />
+				<p class="mt-4 text-sm max-w-xs">
+					Soluções em TI com atendimento humanizado e confiança para empresas e residências em Divinésia/MG e região.
+				</p>
 			</div>
-			<span class="text-gray-400 text-xs">Divinésia/MG • Segunda a sábado, das 8h às 18h</span>
+
+			<div class="md:justify-self-center lg:col-span-4">
+				<p class="font-semibold text-white">Navegação</p>
+				<ul class="mt-4 space-y-2 text-sm">
+					<li><a href="/#" class="hover:text-green-400 transition-colors">Início</a></li>
+					<li><a href="/#servicos" class="hover:text-green-400 transition-colors">Serviços</a></li>
+					<li><a href="/#avaliacoes-google" class="hover:text-green-400 transition-colors">Avaliações</a></li>
+					<li><a href="/#sobre" class="hover:text-green-400 transition-colors">Sobre</a></li>
+					<li><a href="/#contato" class="hover:text-green-400 transition-colors">Contato</a></li>
+				</ul>
+			</div>
+
+			<div class="md:justify-self-end lg:col-span-4">
+				<p class="font-semibold text-white">Fale Conosco</p>
+				<ul class="mt-4 space-y-3 text-sm">
+					<li>
+						<a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-green-400 transition-colors">
+							<span class="icon-[ic--baseline-whatsapp] text-xl text-green-500"></span>
+							<span>WhatsApp</span>
+						</a>
+					</li>
+					<li>
+						<a href="mailto:contato@divcomp.com.br" class="inline-flex items-center gap-2 hover:text-yellow-300 transition-colors">
+							<span class="icon-[ic--baseline-email] text-xl text-yellow-400"></span>
+							<span>Email</span>
+						</a>
+					</li>
+				</ul>
+				<p class="mt-4 text-xs">
+					Divinésia/MG • Seg. a Sáb, 8h às 18h
+				</p>
+			</div>
 		</div>
-	</div>
-	<div class="max-w-7xl mx-auto mt-8 pt-4 border-t border-green-800/10 text-center text-xs text-gray-500 flex flex-col md:flex-row items-center justify-between gap-2 px-6">
-    <span>
-      &copy; {year} DivComp Informática. Todos os direitos reservados.
-    </span>
-		<span>
-      Desenvolvido por <span class="font-semibold text-green-400">Raimundo C Ferreira</span> — <span class="text-green-500 font-semibold">Sábio System Tecnologia</span>
-    </span>
+
+		<div class="mt-12 pt-8 border-t border-white/10 text-center md:flex md:items-center md:justify-between text-xs">
+			<p>&copy; {year} DivComp Soluções. Todos os direitos reservados.</p>
+			<p class="mt-4 md:mt-0">
+				Desenvolvido com <span class="icon-[mdi--heart] text-green-500 relative top-px"></span> por
+				<a href="https://seusite.com" target="_blank" rel="noopener" class="font-semibold text-green-400 hover:text-green-300">Sábio System</a>
+			</p>
+		</div>
 	</div>
 </footer>
